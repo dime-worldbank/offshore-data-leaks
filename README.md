@@ -2,7 +2,7 @@
 output:
    pdf_document:
     latex_engine: custom
-    latex_engine_path: "\c\Users\roxan\AppData\Roaming\TinyTeX\bin\win32\pdflatex.exe"
+    latex_engine_path: ""
   html_document:
     df_print: paged
 ---
@@ -11,9 +11,9 @@ output:
 
 ## Overview
 
-This repository provides all the code required to replicate the findings presented in the report. The report is divided into two sections: The first section utilizes open-source ICIJ offshore leaks data to explore intriguing patterns and descriptive statistics within this dataset. The second section of the report leverages a combination of ICIJ offshore leaks data and administrative records obtained in collaboration with tax authorities in Ecuador, Honduras, and Senegal.
+This repository provides the code required to replicate the findings presented in the report using the ICIJ data and offers a practical guide for tax authorities to download, clean and prepare offshore leaks data with administrative records. The report is divided into two sections: The first section utilizes open-source ICIJ offshore leaks data to explore intriguing patterns and descriptive statistics within this dataset. The second section (not covered in this guide) of the report leverages a combination of ICIJ offshore leaks data and administrative records obtained in collaboration with tax authorities in Ecuador, Honduras, and Senegal.
 
-The goal of the data exercise is to understand the prevalence of taxpayers from each of our three countries in the ICIJ's Offshore Leaks dataset and the degree to which the data could be merged with taxpayer registers to gauge the incidence of offshore ownership along the in- come distribution. To do so, we generate a list of names of shareholders and beneficial owners for each country of interest, using three steps: (i) assigning officers to countries, (ii) selecting firms, and (iii) cleaning name lists.
+The goal of the data exercise is to understand the prevalence of taxpayers from each of our three countries in the ICIJ's Offshore Leaks dataset and the degree to which the data could be merged with taxpayer registers to gauge the incidence of offshore ownership along the income distribution. To do so, we generate a list of names of shareholders and beneficial owners for each country of interest, using three steps: (i) assigning officers to countries, (ii) selecting firms, and (iii) cleaning name lists.
 
 ## Data Accessibility
 
@@ -50,7 +50,6 @@ Datils on the first section of this report:
 | nodes-officers           | Dataset containing information about a person or company who plays a role in an offshore entity                                                                                                                                            | FALSE    |
 | relationships.csv        | Database connecting different nodes under specific relationship category, source ID and date                                                                                                                                               | FALSE    |
 
-Details on the second section of this report:
 
 ## Computational requirements
 
@@ -75,9 +74,9 @@ The code was last run on a MacBook pro (M2) laptop with MacOS version 12.4.
 ## Description of programs/code
 
 -   The master script `code/00_Master.R` executes all other code necessary to replicate figures and tables in the first section of this paper.
--   The script `01_Master.R` loads, cleans and save the three main datasets on 1) an officer-entity relationship level master dataset, 2) an officer level dataset, and 3) an entity level dataset.
+-   The script `01_Clean.R` loads, cleans and save the three main datasets on 1) an officer-entity relationship level master dataset, 2) an officer level dataset, and 3) an entity level dataset.
 -   The script `02_Analysis.R` produce the first section figures and tables of this paper.
--   The script `03_Analysis_Honduras.R` produce the country case for the second section of the report
+
 
 ## Instructions to Replicators
 
@@ -90,8 +89,8 @@ The code was last run on a MacBook pro (M2) laptop with MacOS version 12.4.
 The provided code reproduces:
 
 -   [ ] All numbers provided in text in the paper
--   [x] All tables and figures in the paper
--   [ ] Selected tables and figures in the paper, as explained and justified below.
+-   [ ] All tables and figures in the paper
+-   [x] Selected tables and figures in the paper, as explained and justified below.
 
 | Figures | Label                                                                            | Do-file              |
 |------------------|------------------------------------|------------------|
@@ -99,10 +98,7 @@ The provided code reproduces:
 | 2       | Figure 2: Individuals in Offshore Leaks Database (OLD) by Country GDP Per Capita | 02_Analysis          |
 | 3       | Figure 3: Share of population named in Offshore Leaks Database (OLD)             | 02_Analysis          |
 | 4       | Figure 4: Year of Incorporation of Entities in Tax Havens                        | 02_Analysis          |
-| 5       | Figure 5: Share of taxpayers matched to leaks data (Honduras)                    | 03_Analysis_Honduras |
-| 6       | Figure 6: Share of taxpayers as shareholders of corporations (Honduras)          | 03_Analysis_Honduras |
-| 7       | Figure 7: Share of taxpayers matched to leaks data (Ecuador)                     | 04_Analysis_Ecuador  |
-| 8       | Figure 8: Share of taxpayers matched to leaks data (Senegal)                     | 04_Analysis_Senegal  |
+
 
 | Tables | Label                                                                | Do-file     |
 |------------------|------------------------------------|------------------|
